@@ -71,6 +71,12 @@ button,input,select{font:inherit;color:inherit}
 .pkg{list-style:none;margin:8px 0 10px;padding:0;display:grid;gap:4px;white-space:normal;color:var(--ink)}
 .pkg li{position:relative;padding-inline-start:22px}
 .pkg li::before{content:"";position:absolute;inset-inline-start:2px;top:.55em;width:10px;height:6px;border-left:1.6px solid var(--orange);border-bottom:1.6px solid var(--orange);transform:rotate(-45deg)}
+.plans{display:grid;gap:10px;margin:10px 0 12px;white-space:normal}
+.plan{border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;color:var(--ink)}
+.plan.best{border-color:color-mix(in srgb,var(--orange) 55%,var(--line));background:color-mix(in srgb,var(--orange) 6%,transparent)}
+.plan b{font-family:var(--f-display);font-weight:500;font-size:16px}
+.plan .amt{font-family:var(--f-display);color:var(--orange);font-size:20px;font-weight:700}
+.plan .pkg{margin:6px 0 0}
 .works{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;white-space:normal}
 .works a{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);
   border-radius:12px;padding:11px 14px;transition:background-color .3s var(--ease)}
@@ -130,18 +136,27 @@ footer{color:var(--muted);font-size:13px;text-align:center}
     <h2>تصميم موقع</h2>
     <div class="faq">
       <details><summary>كم ياخذ وقت؟</summary><div class="ans">تستلم موقعك خلال 7 أيام من ما توصلنا معلوماتك</div></details>
-      <details><summary>كم السعر؟ ووش في الباقة؟</summary><div class="ans" id="web-price">باقة وحدة فيها كل اللي يحتاجه محلك:
-        <ul class="pkg">
-          <li>تصميم موقع على هوية محلك وألوانه</li>
-          <li>يطلع مرتب على الجوال والكمبيوتر</li>
-          <li>صفحة تعرّف بمحلك وخدماتك</li>
-          <li>معرض لصور شغلك أو منتجاتك</li>
-          <li>موقعك على خريطة قوقل</li>
-          <li>زر واتساب يوصل الزبون لك على طول</li>
-          <li>نرفع الموقع على الإنترنت ونجهزه لقوقل</li>
-          <li>تستلمه خلال 7 أيام</li>
-        </ul>السعر: 1500 ريال للباقة كاملة
-والدفع على 3 دفعات: 250 ريال قبل ما نبدأ، والثانية بعد التسليم، والثالثة بعد شهر
+      <details><summary>كم السعر؟ ووش في الباقات؟</summary><div class="ans" id="web-price">عندنا باقتين، اختر اللي يريحك:
+        <div class="plans">
+          <div class="plan"><b>باقة التصميم</b><span class="amt">1500 ريال</span>
+            <ul class="pkg">
+              <li>تصميم موقع على هوية محلك وألوانه</li>
+              <li>يطلع مرتب على الجوال والكمبيوتر</li>
+              <li>صفحة تعرّف بمحلك وخدماتك</li>
+              <li>معرض لصور شغلك أو منتجاتك</li>
+              <li>موقعك على خريطة قوقل وزر واتساب</li>
+              <li>تستلمه خلال 7 أيام مع رابط معاينة</li>
+            </ul></div>
+          <div class="plan best"><b>باقة التصميم والإطلاق</b><span class="amt">1750 ريال</span>
+            <ul class="pkg">
+              <li>كل اللي في باقة التصميم</li>
+              <li>نرفع الموقع على الإنترنت ونربطه بالدومين</li>
+              <li>نسجل الموقع في قوقل عشان يطلع في البحث</li>
+              <li>نسوي ملف محلك في خرائط قوقل</li>
+              <li>نجرب كل شي ونسلمك الموقع شغال</li>
+              <li>أنت مرتاح وما تتعامل مع أي شي تقني</li>
+            </ul></div>
+        </div>الدفع على 3 دفعات: 250 ريال قبل ما نبدأ، والثانية بعد التسليم، والثالثة بعد شهر
 الدومين (اسم الموقع) يكون باسمك وتدفعه لحاله، تقريباً 40 ريال في السنة</div></details>
       <details><summary>كيف الدفع؟</summary><div class="ans">على 3 دفعات:
 الأولى 250 ريال قبل ما نبدأ
