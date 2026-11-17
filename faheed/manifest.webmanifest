@@ -1,0 +1,14 @@
+{
+  "name": "عالم فهيد — أكواد وعروض الخصم",
+  "short_name": "عالم فهيد",
+  "description": "أفضل كود خصم موثوق لكل متجر — مجرَّب ومفحوص. نون، أمازون، الطيران وأكبر المتاجر.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#093322",
+  "theme_color": "#093322",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

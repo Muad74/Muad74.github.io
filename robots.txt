@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: /engineering/
 Disallow: /silicone/
-Disallow: /realestate/
+Disallow: /faheed/
 Disallow: /realestate-landing/
 Disallow: /auto-parts/
 Disallow: /events/
