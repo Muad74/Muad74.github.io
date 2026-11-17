@@ -68,6 +68,9 @@ button,input,select{font:inherit;color:inherit}
 .faq details[open] summary::after{transform:rotate(135deg) translateY(-2px)}
 .faq .ans{padding:0 18px 16px;color:var(--muted);white-space:pre-line;overflow:hidden}
 @media (prefers-reduced-motion:reduce){.reveal{animation:none}.choice,.choice i,.choice .arr,.faq summary::after{transition:none}}
+.pkg{list-style:none;margin:8px 0 10px;padding:0;display:grid;gap:4px;white-space:normal;color:var(--ink)}
+.pkg li{position:relative;padding-inline-start:22px}
+.pkg li::before{content:"";position:absolute;inset-inline-start:2px;top:.55em;width:10px;height:6px;border-left:1.6px solid var(--orange);border-bottom:1.6px solid var(--orange);transform:rotate(-45deg)}
 .works{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;white-space:normal}
 .works a{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);
   border-radius:12px;padding:11px 14px;transition:background-color .3s var(--ease)}
@@ -127,11 +130,17 @@ footer{color:var(--muted);font-size:13px;text-align:center}
     <h2>تصميم موقع</h2>
     <div class="faq">
       <details><summary>كم ياخذ وقت؟</summary><div class="ans">تستلم موقعك خلال 7 أيام من ما توصلنا معلوماتك</div></details>
-      <details><summary>كم السعر؟</summary><div class="ans" id="web-price">عندنا باقتين:
-باقة التصميم: نصمم موقعك وتستلم رابط معاينة تشوفه شغال
-باقة التصميم والإطلاق: نفس الباقة، وفوقها نرفع الموقع على الإنترنت وننزّله في قوقل وأنت مرتاح
-
-أرسل طلبك تحت وأعطيك السعر المناسب لمحلك
+      <details><summary>كم السعر؟ ووش في الباقة؟</summary><div class="ans" id="web-price">باقة وحدة فيها كل اللي يحتاجه محلك:
+        <ul class="pkg">
+          <li>تصميم موقع على هوية محلك وألوانه</li>
+          <li>يطلع مرتب على الجوال والكمبيوتر</li>
+          <li>صفحة تعرّف بمحلك وخدماتك</li>
+          <li>معرض لصور شغلك أو منتجاتك</li>
+          <li>موقعك على خريطة قوقل</li>
+          <li>زر واتساب يوصل الزبون لك على طول</li>
+          <li>نرفع الموقع على الإنترنت ونجهزه لقوقل</li>
+          <li>تستلمه خلال 7 أيام</li>
+        </ul>السعر: أرسل طلبك تحت وأعطيك السعر لمحلك
 الدومين (اسم الموقع) يكون باسمك وتدفعه لحاله، تقريباً 40 ريال في السنة</div></details>
       <details><summary>كيف الدفع؟</summary><div class="ans">على 3 دفعات:
 الأولى 250 ريال قبل ما نبدأ
@@ -152,10 +161,6 @@ footer{color:var(--muted);font-size:13px;text-align:center}
           <li><a href="https://muad74.github.io/silicone/" target="_blank" rel="noopener"><b>مصنع سيليكون وعوازل</b><span>افتح ←</span></a></li>
           <li><a href="https://muad74.github.io/realestate/" target="_blank" rel="noopener"><b>مكتب عقاري</b><span>افتح ←</span></a></li>
           <li><a href="https://muad74.github.io/realestate-landing/" target="_blank" rel="noopener"><b>صفحة عقارات حي</b><span>افتح ←</span></a></li>
-          <li><a href="https://muad74.github.io/auto-parts/" target="_blank" rel="noopener"><b>متجر قطع غيار سيارات</b><span>افتح ←</span></a></li>
-          <li><a href="https://muad74.github.io/events/" target="_blank" rel="noopener"><b>منصة مناسبات</b><span>افتح ←</span></a></li>
-          <li><a href="https://muad74.github.io/barq/" target="_blank" rel="noopener"><b>منصة برقيات</b><span>افتح ←</span></a></li>
-          <li><a href="https://muad74.github.io/tahseel/" target="_blank" rel="noopener"><b>منصة تحصيل مستحقات</b><span>افتح ←</span></a></li>
         </ul></div></details>
     </div>
   </section>
