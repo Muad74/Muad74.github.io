@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /engineering/
+Disallow: /silicone/
+Disallow: /realestate/
+Disallow: /realestate-landing/
+Disallow: /auto-parts/
+Disallow: /events/
+Disallow: /barq/
+Disallow: /tahseel/
