@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>معاذ بن فهد</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<meta name="description" content="تصميم مواقع للمحلات والشركات وإعلانات قوقل — معاذ بن فهد">
+<meta property="og:title" content="معاذ بن فهد — مواقع وإعلانات قوقل">
+<meta property="og:description" content="موقع لمحلك تستلمه خلال 7 أيام، وإعلانات قوقل للشركات">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1F44'/%3E%3Crect x='6' y='22' width='20' height='4' rx='2' fill='%23F57C00'/%3E%3C/svg%3E">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}[hidden]{display:none!important}img{max-width:100%}
+
+/* Layout: phone-first single column — brand header, 3 service choices, one open panel (answers + start form) */
+:root{
+  --bg:#F6F1EA; --surface:#FFFFFF; --ink:#0B1F44; --muted:#5A6680; --line:#E4DCCF;
+  --orange:#F57C00; --orange-soft:#FFE6CC; --navy:#0B1F44; --on-navy:#FFFFFF; --ok:#1E8E5A;
+  --f-display:"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A1426; --surface:#122039; --ink:#EEF2F8; --muted:#9AA8C0; --line:#22324F;
+  --orange:#FF9433; --orange-soft:#3A2614; --navy:#1C3260; --on-navy:#FFFFFF; --ok:#4CC38A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1426; --surface:#122039; --ink:#EEF2F8; --muted:#9AA8C0; --line:#22324F;
+  --orange:#FF9433; --orange-soft:#3A2614; --navy:#1C3260; --on-navy:#FFFFFF; --ok:#4CC38A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.35}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+.brand b{font-family:var(--f-display);font-size:19px;font-weight:700;display:block;line-height:1.2}
+.brand span{font-size:13px;color:var(--muted);display:block}
+.hello h1{font-size:26px;font-weight:700}
+.hello p{margin:6px 0 0;color:var(--muted)}
+
+:root{--ease:cubic-bezier(.22,.8,.26,1)}
+.choices{display:grid;gap:8px}
+.choice{display:flex;align-items:center;gap:14px;width:100%;text-align:right;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;padding:14px 16px;cursor:pointer;transition:background-color .35s var(--ease),border-color .35s var(--ease),transform .25s var(--ease),box-shadow .35s var(--ease)}
+.choice:hover{border-color:color-mix(in srgb,var(--orange) 35%,var(--line))}
+.choice:active{transform:scale(.985)}
+.choice[aria-pressed="true"]{background:var(--orange-soft);border-color:transparent;box-shadow:0 6px 18px -10px color-mix(in srgb,var(--orange) 45%,transparent)}
+.choice i{width:40px;height:40px;border-radius:12px;color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none;
+  background:color-mix(in srgb,var(--orange) 9%,transparent);transition:background-color .35s var(--ease)}
+.choice[aria-pressed="true"] i{background:var(--surface)}
+.choice strong{font-family:var(--f-display);font-size:17px;font-weight:500;display:block}
+.choice small{color:var(--muted);font-size:14px}
+.choice .arr{margin-inline-start:auto;color:var(--muted);transition:transform .35s var(--ease)}
+.choice[aria-pressed="true"] .arr{transform:rotate(-90deg)}
+
+.panel{display:flex;flex-direction:column;gap:12px}
+.panel h2{font-size:19px;font-weight:500}
+.reveal{animation:rise .45s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.faq{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{list-style:none;cursor:pointer;padding:14px 18px;font-weight:500;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:9px;height:9px;flex:none;border-left:1.5px solid var(--orange);border-bottom:1.5px solid var(--orange);
+  transform:rotate(-45deg) translateY(-2px);transition:transform .35s var(--ease)}
+.faq details[open] summary::after{transform:rotate(135deg) translateY(-2px)}
+.faq .ans{padding:0 18px 16px;color:var(--muted);white-space:pre-line;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}.choice,.choice i,.choice .arr,.faq summary::after{transition:none}}
+.works{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;white-space:normal}
+.works a{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);
+  border-radius:12px;padding:11px 14px;transition:background-color .3s var(--ease)}
+.works a:hover{background:var(--orange-soft)}
+.works b{font-weight:500}
+.works span{color:var(--orange);font-size:14px;white-space:nowrap}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.shots img{width:100%;max-width:100%;aspect-ratio:480/760;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);display:block}
+
+.start{background:var(--navy);color:var(--on-navy);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.start h3{font-size:18px;font-weight:500}
+.start p{margin:0;opacity:.8;font-size:14px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:14px;opacity:.85}
+.field input,.field select{width:100%;min-width:0;background:var(--surface);color:var(--ink);border:0;border-radius:12px;padding:12px 14px;font-size:16px}
+.send{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font-family:var(--f-display);
+  font-weight:500;font-size:16px;border-radius:14px;padding:14px;margin-top:4px;transition:opacity .35s var(--ease),transform .2s var(--ease)}
+.send:active{transform:scale(.98)}
+.send[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.hint{font-size:13px;opacity:.75;text-align:center}
+.human{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.num{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg);border-radius:12px;padding:10px 14px;font-variant-numeric:tabular-nums}
+.num span{direction:ltr;font-weight:600}
+.num button{background:none;border:1px solid var(--line);border-radius:10px;padding:4px 12px;cursor:pointer;font-size:14px}
+footer{color:var(--muted);font-size:13px;text-align:center}
+@media (prefers-reduced-motion:reduce){.choice{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div><b>معاذ بن فهد</b><span>مواقع وإعلانات قوقل</span></div>
+  </div>
+
+  <div class="hello">
+    <h1>هلا والله، حياك 👋</h1>
+    <p>وش الخدمة اللي تبيها؟ اختر وتلقى كل الأجوبة هنا</p>
+  </div>
+
+  <div class="choices" role="group" aria-label="الخدمات">
+    <button class="choice" id="c-web" aria-pressed="false" data-open="p-web">
+      <i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18.5h4"/></svg></i>
+      <span><strong>تصميم موقع</strong><small>موقع لمحلك تستلمه خلال 7 أيام</small></span><span class="arr">←</span>
+    </button>
+    <button class="choice" id="c-ads" aria-pressed="false" data-open="p-ads">
+      <i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></i>
+      <span><strong>إعلانات قوقل</strong><small>نطلّع خدماتك للي يدوّرون عليها</small></span><span class="arr">←</span>
+    </button>
+    <button class="choice" id="c-human" aria-pressed="false" data-open="p-human">
+      <i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg></i>
+      <span><strong>أكلم شخص</strong><small>تكلمني مباشرة على واتساب</small></span><span class="arr">←</span>
+    </button>
+  </div>
+
+  <!-- WEB -->
+  <section class="panel" id="p-web" hidden>
+    <h2>تصميم موقع</h2>
+    <div class="faq">
+      <details><summary>كم ياخذ وقت؟</summary><div class="ans">تستلم موقعك خلال 7 أيام من ما توصلنا معلوماتك</div></details>
+      <details><summary>كم السعر؟</summary><div class="ans" id="web-price">عندنا باقتين:
+باقة التصميم: نصمم موقعك وتستلم رابط معاينة تشوفه شغال
+باقة التصميم والإطلاق: نفس الباقة، وفوقها نرفع الموقع على الإنترنت وننزّله في قوقل وأنت مرتاح
+
+أرسل طلبك تحت وأعطيك السعر المناسب لمحلك
+الدومين (اسم الموقع) يكون باسمك وتدفعه لحاله، تقريباً 40 ريال في السنة</div></details>
+      <details><summary>كيف الدفع؟</summary><div class="ans">على 3 دفعات:
+الأولى 250 ريال قبل ما نبدأ
+الثانية بعد ما تستلم موقعك
+الثالثة بعد شهر من التسليم</div></details>
+      <details><summary>وش في الموقع؟</summary><div class="ans">صفحة تعرّف بمحلك وشغلك
+صور منتجاتك أو شغلك
+موقعك على الخريطة
+زر واتساب يوصل الزبون لك على طول
+ويطلع مرتب على الجوال قبل الكمبيوتر</div></details>
+      <details><summary>وش أجهز؟</summary><div class="ans">شعار المحل (إذا ما عندك نسويه لك)
+اسم المحل ونبذة قصيرة
+صور شغلك أو منتجاتك
+رقم التواصل والموقع على الخريطة</div></details>
+      <details><summary>أبي أشوف نماذج</summary><div class="ans">هذي مواقع حقيقية من شغلي، افتحها وجربها من جوالك
+        <ul class="works">
+          <li><a href="https://engineering-office-5hq.pages.dev/" target="_blank" rel="noopener"><b>مكتب استشارات هندسية</b><span>افتح ←</span></a></li>
+          <li><a href="https://silicone-factory.pages.dev/" target="_blank" rel="noopener"><b>مصنع سيليكون وعوازل</b><span>افتح ←</span></a></li>
+          <li><a href="https://realestate-office.pages.dev/" target="_blank" rel="noopener"><b>مكتب عقاري</b><span>افتح ←</span></a></li>
+          <li><a href="https://realestate-landing-5vu.pages.dev/" target="_blank" rel="noopener"><b>صفحة عقارات حي</b><span>افتح ←</span></a></li>
+          <li><a href="https://auto-parts-store-2qi.pages.dev/" target="_blank" rel="noopener"><b>متجر قطع غيار سيارات</b><span>افتح ←</span></a></li>
+          <li><a href="https://events-platform-2eq.pages.dev/" target="_blank" rel="noopener"><b>منصة مناسبات</b><span>افتح ←</span></a></li>
+          <li><a href="https://barq-telegrams.pages.dev/" target="_blank" rel="noopener"><b>منصة برقيات</b><span>افتح ←</span></a></li>
+          <li><a href="https://tahseel-collections.pages.dev/" target="_blank" rel="noopener"><b>منصة تحصيل مستحقات</b><span>افتح ←</span></a></li>
+        </ul></div></details>
+    </div>
+  </section>
+
+  <!-- ADS -->
+  <section class="panel" id="p-ads" hidden>
+    <h2>إعلانات قوقل</h2>
+    <div class="faq">
+      <details><summary>وش الخدمة بالضبط؟</summary><div class="ans">نسوي لشركتك حملة إعلانية في قوقل تطلّع خدماتك للي يدوّرون عليها
+ونتابع الحملة ونعدّلها باستمرار عشان تجيب لك عملاء بأقل تكلفة
+الخدمة لأي شركة أو نشاط يقدم خدمات</div></details>
+      <details><summary>كم السعر؟</summary><div class="ans">رسوم الإدارة 3000 ريال بالشهر
+وميزانية الإعلان مو داخلة فيها، تدفعها لقوقل مباشرة وأنت تحدد كم تبي تصرف</div></details>
+      <details><summary>متى تبان النتائج؟</summary><div class="ans">الإعلان يبدأ يظهر من أول أيام التشغيل بعد موافقة قوقل
+وأول الأسابيع نضبط فيها الحملة عشان تتحسن نتايجها
+الأرقام تختلف حسب مجالك وميزانيتك، فما نوعدك بأرقام مضمونة</div></details>
+      <details><summary>لازم عندي موقع؟</summary><div class="ans">الأفضل يكون عندك موقع، لأن الزبون يضغط الإعلان ويروح له
+وإذا ما عندك نسوي لك الموقع والإعلانات مع بعض</div></details>
+    </div>
+  </section>
+
+  <!-- START FORM (web + ads) -->
+  <form class="start" id="start" hidden novalidate>
+    <h3>أبي أبدأ ✅</h3>
+    <p>عبّ هالمعلومات، وتنفتح لك رسالة واتساب جاهزة ترسلها لي</p>
+    <div class="field"><label for="f-name">اسمك</label><input id="f-name" autocomplete="name" maxlength="60"></div>
+    <div class="field"><label for="f-shop">اسم محلك أو نشاطك</label><input id="f-shop" maxlength="80"></div>
+    <div class="field"><label for="f-city">المدينة</label><input id="f-city" maxlength="40"></div>
+    <div class="field"><label for="f-site">عندك موقع حالياً؟</label><select id="f-site"><option value="">اختر</option><option>إيه عندي</option><option>لا ما عندي</option></select></div>
+    <a class="send" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 12 21 3l-4 18-5-7z"/></svg>أرسل طلبي على واتساب</a>
+    <div class="hint" id="hint">عبّ اسمك واسم محلك عشان يتفعّل الزر</div>
+  </form>
+
+  <!-- HUMAN -->
+  <section class="panel" id="p-human" hidden>
+    <div class="human">
+      <h2>أبشر، كلمني مباشرة</h2>
+      <a class="send" href="https://wa.me/966548173723?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D9%83%D9%84%D9%85%D9%83" target="_blank" rel="noopener">افتح المحادثة على واتساب</a>
+      <div class="num"><span id="num">+966 54 817 3723</span><button type="button" id="copy">نسخ الرقم</button></div>
+    </div>
+  </section>
+
+  <footer>معاذ بن فهد · مواقع وإعلانات للمحلات والشركات</footer>
+</div>
+
+<script>
+const PHONE='966548173723';
+let service='';
+const choices=[...document.querySelectorAll('.choice')];
+const panels={'p-web':'تصميم موقع','p-ads':'إعلانات قوقل','p-human':''};
+choices.forEach(b=>b.addEventListener('click',()=>{
+  const id=b.dataset.open;
+  if(b.getAttribute('aria-pressed')==='true')return;
+  chime(560,.9);
+  choices.forEach(c=>c.setAttribute('aria-pressed',String(c===b)));
+  Object.keys(panels).forEach(p=>document.getElementById(p).hidden=p!==id);
+  service=panels[id];
+  const form=document.getElementById('start');
+  form.hidden=!service;
+  [document.getElementById(id),form].forEach(el=>{el.classList.remove('reveal');void el.offsetWidth;el.classList.add('reveal')});
+  update();
+  setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'}),60);
+}));
+
+const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* soft UI sound: a short, quiet sine "pluck" made in the browser (plays only after a tap) */
+let ac=null;
+function chime(freq,vol=1){
+  try{
+    ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    if(ac.state==='suspended')ac.resume();
+    const t=ac.currentTime,o=ac.createOscillator(),o2=ac.createOscillator(),g=ac.createGain(),f=ac.createBiquadFilter();
+    o.type='sine';o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(freq*.985,t+.25);
+    o2.type='sine';o2.frequency.setValueAtTime(freq*2,t);
+    f.type='lowpass';f.frequency.value=1800;
+    const m=ac.createGain();m.gain.value=.18;o2.connect(m);m.connect(g);
+    o.connect(g);g.connect(f);f.connect(ac.destination);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.05*vol,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+.32);
+    o.start(t);o2.start(t);o.stop(t+.34);o2.stop(t+.34);
+  }catch(e){}
+}
+
+/* smooth accordion: animate the answer's height instead of jumping */
+document.querySelectorAll('.faq details').forEach(d=>{
+  const sum=d.querySelector('summary'),ans=d.querySelector('.ans');
+  sum.addEventListener('click',e=>{
+    e.preventDefault();
+    if(d.dataset.busy)return;
+    const opening=!d.open;
+    chime(opening?660:520,.7);
+    if(REDUCED){d.open=opening;return}
+    d.dataset.busy='1';
+    if(opening){
+      d.open=true;
+      const h=ans.scrollHeight;
+      ans.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:320,easing:'cubic-bezier(.22,.8,.26,1)'}).onfinish=()=>delete d.dataset.busy;
+    }else{
+      const h=ans.scrollHeight;
+      ans.animate([{height:h+'px',opacity:1},{height:'0px',opacity:0}],{duration:260,easing:'cubic-bezier(.4,0,.2,1)'}).onfinish=()=>{d.open=false;delete d.dataset.busy};
+    }
+  });
+});
+const val=id=>document.getElementById(id).value.trim();
+function update(){
+  const name=val('f-name'),shop=val('f-shop'),city=val('f-city'),site=val('f-site');
+  const ready=name&&shop;
+  const lines=['هلا، أبي أبدأ ✅',`الخدمة: ${service}`,`الاسم: ${name}`,`المحل: ${shop}`];
+  if(city)lines.push(`المدينة: ${city}`);
+  if(site)lines.push(`عندي موقع: ${site}`);
+  const a=document.getElementById('send');
+  a.href=ready?`https://wa.me/${PHONE}?text=${encodeURIComponent(lines.join('\n'))}`:'#';
+  a.setAttribute('aria-disabled',String(!ready));
+  document.getElementById('hint').textContent=ready?'تنفتح الرسالة في واتساب، اضغط إرسال هناك':'عبّ اسمك واسم محلك عشان يتفعّل الزر';
+}
+['f-name','f-shop','f-city','f-site'].forEach(id=>document.getElementById(id).addEventListener('input',update));
+document.getElementById('start').addEventListener('submit',e=>e.preventDefault());
+document.getElementById('copy').addEventListener('click',async e=>{
+  const btn=e.currentTarget;
+  try{await navigator.clipboard.writeText('+'+PHONE);btn.textContent='تم النسخ'}
+  catch{const r=document.createRange();r.selectNodeContents(document.getElementById('num'));const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='انسخه من التحديد'}
+});
+</script>
+</body>
+</html>
